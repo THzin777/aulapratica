@@ -1,0 +1,38 @@
+body{
+    background-color: #f0f0f0;
+    text-align: center;
+}
+form{
+    margin-top: 20px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 8px;
+    width: 470px;
+}
+.corpo{
+    margin-left: 350px;
+}
+label{
+    margin-top: 10px;
+}
+div{
+margin-bottom: 10px;
+border-radius: 5px;
+
+    padding: 10px;
+}
+.senha{
+    background-color: #d1d1d1;
+}
+#campo{
+    background-color: #d1d1d1;
+}
+#submit{
+    background-color: #d1d1d1;
+}
+#thankyou{
+    background-color: #d1d1d1;
+}
+.login{
+    background-color: #d1d1d1;
+}
