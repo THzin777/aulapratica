@@ -1,38 +1,53 @@
-body{
+body {
     background-color: #f0f0f0;
     text-align: center;
-}
-form{
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
     margin-top: 20px;
-    padding: 50px;
+    padding: 30px;
     background-color: white;
     border-radius: 8px;
     width: 470px;
-}
-.corpo{
-    margin-left: 350px;
-}
-label{
-    margin-top: 10px;
-}
-div{
-margin-bottom: 10px;
-border-radius: 5px;
-
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .area-formulario div {
+    margin-bottom: 10px;
     padding: 10px;
-}
-.senha{
+    border-radius: 5px;
     background-color: #d1d1d1;
-}
-#campo{
-    background-color: #d1d1d1;
-}
-#submit{
-    background-color: #d1d1d1;
-}
-#thankyou{
-    background-color: #d1d1d1;
-}
-.login{
-    background-color: #d1d1d1;
-}
+    cursor: pointer;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 20px;
+  }

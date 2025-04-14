@@ -1,43 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pratica.css">
-    <title>Aula pratica</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Pesquisa</title>
+  <link rel="stylesheet" href="pratica.css">
 </head>
 <body>
-<h2>Formulario de pesquisa</h2>
-<div class="corpo">
-<form id="Formulario">
-    <div id="campo">
-        <p>preencha seu email</p>
-    </div>
-<div class="senha">
-<p> digite a senha</p>
-</div>
-<div class="login">
-    <p>login</p>
-</div>
-<div id="submit">
-    <p>enviar Formulario</p>
-</div>
-<div id="thankyou">
- obrigado 
-</div>
-<label for="email">email</label>
-<input type="email" id="email"/>
 
-<label for="senha">senha</label>
-<input type="password" id="senha"/>
-
-<input type="button" id="botao" value="enviar"/>
-
-</form> 
-</div>
-<script>
+  <h2>Formulário de Pesquisa</h2>
+  <div class="formulario-container">
+    <form id="formulario">
+   
+      <div id="boasVindas">
+        <p>Seja bem-vindo! Clique aqui :)</p>
+      </div>
     
-</script>
+      <div class="mensagemDica">
+        <p>Passe o mouse aqui para ver a dica</p>
+      </div>
+   
+      <div id="mensagemEscondida">
+        <p>Essa mensagem vai desaparecer se você clicar aqui</p>
+      </div>
+   
+      <div>
+        <p name="instrucao">Pressione uma tecla do teclado</p>
+      </div>
 
+      <div id="mensagemFinal">
+        <p>O resultado do envio aparecerá aqui</p>
+      </div>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email"><br><br>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha"><br><br>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+
+  <script>
+
+    var formulario = document.getElementById("formulario");
+
+    formulario.addEventListener("submit", function(event) {
+      event.preventDefault(); 
+
+      var email = document.getElementById("email").value;
+      var senha = document.getElementById("senha").value;
+
+      var mensagem = "Email: " + email + "<br>Senha: " + senha;
+      document.getElementById("mensagemFinal").innerHTML = mensagem;
+    });
+
+    var boasVindas = document.getElementById("boasVindas");
+    boasVindas.addEventListener("click", function() {
+      boasVindas.innerHTML = "<p>Obrigado por clicar! :)</p>";
+      boasVindas.style.backgroundColor = "yellow";
+    });
+
+    var mensagemDica = document.querySelector(".mensagemDica");
+    mensagemDica.addEventListener("mouseover", function() {
+      mensagemDica.innerHTML = "<p>Você passou o mouse aqui!</p>";
+      mensagemDica.style.backgroundColor = "lightgreen";
+    });
+
+    mensagemDica.addEventListener("mouseout", function() {
+      mensagemDica.innerHTML = "<p>Passe o mouse aqui para ver a dica</p>";
+      mensagemDica.style.backgroundColor = "#d1d1d1";
+    });
+
+    var caixaInfo = document.getElementById("mensagemEscondida");
+    caixaInfo.addEventListener("click", function() {
+      caixaInfo.style.display = "none";
+    });
+
+    var instrucao = document.getElementsByName("instrucao")[0];
+    document.addEventListener("keydown", function() {
+      instrucao.innerHTML = "<p>Você apertou uma tecla!</p>";
+      instrucao.style.color = "blue";
+    });
+  </script>
 </body>
 </html>
